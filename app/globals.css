@@ -1,0 +1,151 @@
+* {
+  cursor: url(https://cur.cursors-4u.net/others/oth-9/oth800.cur), auto !important;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(/image/AngleTileBG.gif);
+  color: #555;
+  font-family: "DotGothic16", sans-serif;
+  margin: 0;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* カウンター用CSS */
+.counter-area {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 12px;
+  color: #ff69b4;
+}
+
+.counter-num {
+  display: inline-block;
+  background-color: #000;
+  color: #ff00ff;
+  padding: 2px 8px;
+  border: 2px inset #eee;
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin: 0 3px;
+  vertical-align: middle;
+}
+
+a {
+  color: #ff1493;
+  text-decoration: none;
+  border-bottom: 1px dotted #ff1493;
+}
+
+a:hover {
+  color: #ff69b4;
+  position: relative;
+  top: 1px;
+}
+
+h1 {
+  font-size: 20px;
+  text-align: center;
+  color: #ff69b4;
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-shadow: 2px 2px 0px #ffe4e1;
+}
+
+.marquee-text {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
+  color: white;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes footer-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.top-img {
+  width: 100%;
+  height: 150px;
+  border: 2px dashed #ffc0cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+/* ナビゲーション用スタイル */
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+header nav ul li {
+  margin: 0;
+}
+
+header nav ul li a {
+  padding: 5px 10px;
+  border: 1px solid #ff69b4;
+  border-radius: 5px;
+  background-color: #fff0f5;
+}
+
+header nav ul li a:hover {
+  background-color: #ffe4e1;
+}
+
+/* 文字色が変わるアニメーション */
+@keyframes color-change {
+  0% {
+    color: #ff1493;
+  }
+  49.9% {
+    color: #ff1493;
+  }
+  50% {
+    color: #f53eff;
+  }
+  99.9% {
+    color: #f53eff;
+  }
+  100% {
+    color: #ff1493;
+  }
+}
+
+h2 {
+  animation: color-change 1s infinite;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 800px) {
+  body {
+    padding: 5px;
+  }
+}
