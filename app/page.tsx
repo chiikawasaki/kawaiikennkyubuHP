@@ -1,15 +1,16 @@
 import React from "react";
 import { newsData } from "../data/news";
 import Link from "next/link";
+import NewsCard from "../components/NewsCard";
 
 export default function Home() {
-  // 最新3件のニュースを取得
   const latestNews = newsData.slice(0, 3);
   return (
     <>
       <div style={{ textAlign: "center", marginBottom: "20px" }}>
         <img
           src="https://images.cooltext.com/5747850.gif"
+          className="home-title-main"
           width={361}
           height={63}
           alt="かわいい研求部"
@@ -17,6 +18,7 @@ export default function Home() {
         <div style={{ marginTop: "-10px" }}>
           <img
             src="https://images.cooltext.com/5747851.gif"
+            className="home-title-sub"
             width={80}
             height={56}
             alt="HP"
@@ -72,60 +74,7 @@ export default function Home() {
 
       {latestNews.map((news, index) => (
         <div key={news.id}>
-          <div
-            style={{
-              display: "flex",
-              border: "5px solid",
-              borderImage: "url(/image/GlitterHeartBG.gif) 50",
-              padding: "5px",
-              marginBottom: "20px",
-            }}
-          >
-            {news.image && (
-              <img
-                src={news.image}
-                alt={news.title}
-                style={{ width: "300px", height: "auto", objectFit: "cover" }}
-              />
-            )}
-            <div
-              style={{
-                flexDirection: "column",
-                textAlign: "left",
-                marginLeft: "20px",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  marginBottom: "10px",
-                }}
-              >
-                <span
-                  style={{
-                    color: "#ff1493",
-                    fontSize: "12px",
-                    marginRight: "10px",
-                  }}
-                >
-                  {news.date}
-                </span>
-              </div>
-              <h2 style={{ marginTop: "0" }}>{news.title}</h2>
-              <p
-                style={{
-                  textAlign: "left",
-                  lineHeight: 2,
-                  marginRight: "20px",
-                }}
-              >
-                {news.content.length > 300
-                  ? news.content.substring(0, 300) + "..."
-                  : news.content}
-              </p>
-            </div>
-          </div>
+          <NewsCard news={news} truncate={300} />
           {index < latestNews.length - 1 && (
             <div
               style={{

@@ -11,12 +11,12 @@ export default function Join() {
         </h1>
       </div>
 
-      <div
-        style={{
-          padding: "30px",
-          margin: "0 20px",
-        }}
-      >
+        <div
+          style={{
+            padding: "15px",
+            margin: "0",
+          }}
+        >
         <div style={{ textAlign: "center", marginBottom: "40px" }}>
 
           
@@ -29,15 +29,7 @@ export default function Join() {
               marginBottom: "40px",
             }}
           >
-            <div
-              style={{
-                width: "300px",
-                padding: "20px 30px",
-                backgroundColor: "#ffe4e1",
-                borderRadius: "10px",
-                border: "2px solid #ff69b4",
-              }}
-            >
+            <div className="join-step">
               <div style={{ fontSize: "18px", fontWeight: "bold", color: "#ff1493", marginBottom: "10px" }}>
                 STEP 1
               </div>
@@ -48,15 +40,7 @@ export default function Join() {
 
             <div style={{ fontSize: "24px", color: "#ff69b4" }}>↓</div>
 
-            <div
-              style={{
-                width: "300px",
-                padding: "20px 30px",
-                backgroundColor: "#ffe4e1",
-                borderRadius: "10px",
-                border: "2px solid #ff69b4",
-              }}
-            >
+            <div className="join-step">
               <div style={{ fontSize: "18px", fontWeight: "bold", color: "#ff1493", marginBottom: "10px" }}>
                 STEP 2
               </div>
@@ -67,15 +51,7 @@ export default function Join() {
 
             <div style={{ fontSize: "24px", color: "#ff69b4" }}>↓</div>
 
-            <div
-              style={{
-                width: "300px",
-                padding: "20px 30px",
-                backgroundColor: "#ffe4e1",
-                borderRadius: "10px",
-                border: "2px solid #ff69b4",
-              }}
-            >
+            <div className="join-step">
               <div style={{ fontSize: "18px", fontWeight: "bold", color: "#ff1493", marginBottom: "10px" }}>
                 STEP 3
               </div>
@@ -94,7 +70,7 @@ export default function Join() {
               marginBottom: "30px",
             }}
           >
-            <div style={{ fontSize: "16px", lineHeight: "2", textAlign: "left", maxWidth: "500px", margin: "0 auto" }}>
+            <div style={{ fontSize: "16px", lineHeight: "2", textAlign: "left", maxWidth: "500px", margin: "0 auto", width: "100%" }}>
               <p style={{ margin: "0 0 15px 0", display: "flex", alignItems: "center" }}>
                 <Image
                   src="/image/Emoji/HousekiHeartEmoji.gif"

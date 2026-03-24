@@ -40,25 +40,21 @@ export default function About() {
     <>
       <div style={{ textAlign: "center" }}>
         <h1 style={{ marginBottom: "20px" }}>かわいい研求部とは？</h1>
-        <p
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "40px",
-          }}
-        >
-          一言で言うと、
+        <p className="about-intro" style={{ marginBottom: "40px" }}>
+          <span>一言で言うと、</span>
           <span style={{ color: "#ff1493" }}>
             かわいいことならなんでもやるサークル
           </span>
-          です
-          <Image
-            src="/image/Emoji/HousekiHeartEmoji.gif"
-            alt="heart"
-            width={20}
-            height={20}
-          />
+          <span>
+            です
+            <Image
+              src="/image/Emoji/HousekiHeartEmoji.gif"
+              alt="heart"
+              width={20}
+              height={20}
+              style={{ display: "inline", verticalAlign: "middle" }}
+            />
+          </span>
         </p>
         <h2 style={{ marginBottom: "20px" }}>活動目的</h2>
         <div

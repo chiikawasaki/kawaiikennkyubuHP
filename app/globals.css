@@ -143,9 +143,300 @@ h2 {
   animation: color-change 1s infinite;
 }
 
-/* レスポンシブ対応 */
-@media (max-width: 800px) {
+/* === レイアウト === */
+.site-grid {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template:
+    "header header" auto
+    "leftSidebar main" auto
+    "footer footer" auto / 200px 1fr;
+}
+
+.site-main {
+  grid-area: main;
+  background-color: #ffffff;
+  border: 3px double #ff69b4;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  min-height: 400px;
+  overflow: hidden;
+}
+
+.site-header {
+  grid-area: header;
+  background-color: #ffffff;
+  border: 3px double #ff69b4;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  text-align: center;
+}
+
+.site-sidebar {
+  grid-area: leftSidebar;
+  background-color: #ffffff;
+  border: 3px double #ff69b4;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.site-footer {
+  grid-area: footer;
+  background-color: #ffffff;
+  border: 3px double #ff69b4;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  text-align: center;
+  overflow: hidden;
+}
+
+.roseborder-bg {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* モバイルナビバー */
+.mobile-nav-bar {
+  display: none;
+}
+
+.mobile-nav-toggle {
+  background: none;
+  border: none;
+  color: #ff69b4;
+  font-size: 20px;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mobile-nav-links li a {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid #ff69b4;
+  border-radius: 5px;
+  background-color: #fff0f5;
+  font-size: 12px;
+}
+
+.mobile-nav-links li a:hover {
+  background-color: #ffe4e1;
+}
+
+.mobile-nav-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.mobile-nav-dropdown.open {
+  max-height: 500px;
+}
+
+.sidebar-stamps {
+  text-align: center;
+}
+
+/* About紹介文 */
+.about-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ニュースカード */
+.news-card {
+  display: flex;
+  border: 5px solid;
+  border-image: url(/image/GlitterHeartBG.gif) 50;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.news-card-image {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.news-card-body {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* About活動内容 */
+.activity-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/* Joinステップ */
+.join-step {
+  width: 300px;
+  max-width: 100%;
+  padding: 20px 30px;
+  background-color: #ffe4e1;
+  border-radius: 10px;
+  border: 2px solid #ff69b4;
+}
+
+/* トップ画像 */
+.home-title-main {
+  max-width: 100%;
+  height: auto;
+}
+
+.home-title-sub {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === レスポンシブ対応 === */
+@media (max-width: 768px) {
   body {
     padding: 5px;
+  }
+
+  .site-grid {
+    grid-template:
+      "header" auto
+      "nav" auto
+      "main" auto
+      "footer" auto / 1fr;
+  }
+
+  .site-sidebar {
+    display: none;
+  }
+
+  .mobile-nav-bar {
+    display: block;
+    grid-area: nav;
+    background-color: #ffffff;
+    border: 3px double #ff69b4;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+  }
+
+  .mobile-nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .mobile-nav-dropdown-content {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px dotted #ffb6c1;
+    text-align: center;
+  }
+
+  .mobile-nav-dropdown-content .counter-area {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .mobile-nav-dropdown-content .sidebar-stamps img {
+    max-width: 60px;
+    height: auto;
+    margin: 3px;
+  }
+
+  .site-main {
+    padding: 10px;
+    min-height: auto;
+  }
+
+  .site-header {
+    padding: 10px;
+  }
+
+  .news-card {
+    flex-direction: column;
+  }
+
+  .news-card-image {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .news-card-body {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .about-intro {
+    flex-direction: column;
+  }
+
+  .activity-item {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .join-step {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .home-title-main {
+    width: 60%;
+    height: auto;
+  }
+
+  .home-title-sub {
+    width: 40px;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 3px;
+  }
+
+  .site-main {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  .news-card {
+    padding: 3px;
+  }
+
+  .news-card-image {
+    max-height: 150px;
   }
 }

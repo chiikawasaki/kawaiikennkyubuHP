@@ -2,17 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        gridArea: "footer",
-        backgroundColor: "#ffffff",
-        border: "3px double #ff69b4",
-        padding: "15px",
-        boxShadow: "0 0 10px rgba(255, 105, 180, 0.5)",
-        textAlign: "center",
-        overflow: "hidden",
-      }}
-    >
+    <footer className="site-footer">
       <div style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
         <div
           style={{

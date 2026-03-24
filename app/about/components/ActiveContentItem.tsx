@@ -3,7 +3,7 @@ import Image from "next/image";
 
 interface ActiveContentItemProps {
   image: string;
-  content: React.ReactNode; // <p>タグの中身全体（文字とImageを含む）
+  content: React.ReactNode;
   isOdd: boolean;
 }
 const ActiveContentItem = ({
@@ -12,16 +12,7 @@ const ActiveContentItem = ({
   isOdd,
 }: ActiveContentItemProps) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "100px",
-        marginTop: "50px",
-        marginBottom: "30px",
-      }}
-    >
+    <div className="activity-item">
       {isOdd ? (
         <>
           <Image
@@ -29,7 +20,13 @@ const ActiveContentItem = ({
             alt="nail"
             width={200}
             height={200}
-            style={{ borderRadius: "10px" }}
+            style={{
+              borderRadius: "10px",
+              width: "200px",
+              height: "200px",
+              objectFit: "cover",
+              flexShrink: 0,
+            }}
           />
           <div style={{ display: "flex", alignItems: "center" }}>{content}</div>
         </>
@@ -41,7 +38,13 @@ const ActiveContentItem = ({
             alt="nail"
             width={200}
             height={200}
-            style={{ borderRadius: "10px" }}
+            style={{
+              borderRadius: "10px",
+              width: "200px",
+              height: "200px",
+              objectFit: "cover",
+              flexShrink: 0,
+            }}
           />
         </>
       )}

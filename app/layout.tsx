@@ -24,42 +24,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={dotGothic16.className}>
-        <div
-          style={{
-            width: "1000px",
-            display: "grid",
-            gridGap: "10px",
-            gridTemplate:
-              "'header header' auto 'leftSidebar main' auto 'footer footer' auto / 200px auto",
-          }}
-        >
+        <div className="site-grid">
           <img
             src="/image/Roseborder.gif"
             alt="Roseborder"
-            style={{
-              width: "100%",
-              height: "auto",
-              position: "absolute",
-              top: 0,
-              left: 0,
-              zIndex: -1,
-            }}
+            className="roseborder-bg"
           />
           <Header />
           <Sidebar />
-          <main
-            style={{
-              gridArea: "main",
-              backgroundColor: "#ffffff",
-              border: "3px double #ff69b4",
-              padding: "15px",
-              boxShadow: "0 0 10px rgba(255, 105, 180, 0.5)",
-              minHeight: "400px",
-            }}
-          >
-            {children}
-          </main>
+          <main className="site-main">{children}</main>
           <Footer />
         </div>
       </body>
