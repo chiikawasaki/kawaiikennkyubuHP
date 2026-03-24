@@ -120,7 +120,7 @@ export default function About() {
           isOdd={true}
         />
         <ActiveContentItem
-          image="/image/about/Headdress.jpeg"
+          image="/image/about/HeadDress.jpeg"
           content={
             <>
               <p>ヘッドドレス</p>
@@ -165,10 +165,20 @@ export default function About() {
           }
           isOdd={false}
         />
-        <div style={{ textAlign: "center", marginTop: "100px" , marginBottom: "50px" ,justifyContent: "center"}}>
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: "100px",
+            marginBottom: "50px",
+            justifyContent: "center",
+          }}
+        >
           <p>可愛いことならなんでもやる予定です！</p>
           <p>何かやりたいことがあったらお気軽にお申し付けください</p>
-          <p>日々の活動は<a href="/news">News</a>で随時報告するので、欠かさずチェックしてね</p>
+          <p>
+            日々の活動は<a href="/news">News</a>
+            で随時報告するので、欠かさずチェックしてね
+          </p>
         </div>
       </div>
     </>
